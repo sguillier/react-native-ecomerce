@@ -1,7 +1,7 @@
 export const PRODUCTS = [
     {
         id: '1',
-        category: '1',
+        categoryId: '1',
         name: 'Pan Baguette',
         description: 'Pan de baguette de harina integral, con una capa de mantequilla, sal y pimienta.',
         weight: '350gr',
@@ -9,7 +9,7 @@ export const PRODUCTS = [
     },
     {
         id: '2',
-        category: '1',
+        categoryId: '1',
         name: 'Pan de Soya',
         description: 'Pan de soya de harina integral, con una capa de mantequilla, sal y pimienta.',
         weight: '380gr',
@@ -17,7 +17,7 @@ export const PRODUCTS = [
     },
     {
         id: '3',
-        category: '2',
+        categoryId: '2',
         name: 'Pan de Trigo',
         description: 'Pan de trigo de harina integral, con una capa de mantequilla, sal y pimienta.',
         weight: '250gr',
@@ -25,7 +25,7 @@ export const PRODUCTS = [
     },
     {
         id: '4',
-        category: '2',
+        categoryId: '2',
         name: 'Pan de Maíz',
         description: 'Pan de maíz de harina integral, con una capa de mantequilla, sal y pimienta.',
         weight: '250gr',
@@ -33,7 +33,7 @@ export const PRODUCTS = [
     },
     {
         id: '5',
-        category: '3',
+        categoryId: '3',
         name: 'Pan de Soya',
         description: 'Pan de soya de harina de trigo, con una capa de mantequilla, sal y pimienta.',
         weight: '300gr',

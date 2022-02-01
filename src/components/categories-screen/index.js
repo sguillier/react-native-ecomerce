@@ -1,28 +1,29 @@
 import React from 'react';
-import {
-    Button,
-    SafeAreaView,
-    Text,
-} from 'react-native';
+import { SafeAreaView, FlatList, View, } from 'react-native';
 import { styles } from './styles'
 
+import CategoryItem from './category-item/index';
+import { CATEGORIES } from './../../utils/data/categories.js';
 
-const CategoriesScreen = ({ navigation }) => {
 
-    const clickGoListItemsScreen = (item) => {
-        navigation.navigate('ListItemsScreen', { category: item });
+export default function CategoriesScreen({ navigation }) {
+
+    const goListProductsScreen = (category) => {
+        navigation.navigate('ListProductsScreen', {category: category} );
     }
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text>Ir a</Text>
-            <Button
-                title="List Items Screen"
-                onPress={() => clickGoListItemsScreen('category 1')}
-            />
-         </SafeAreaView>
+            <View style={styles.container}>
+                <FlatList
+                    keyExtractor={item => item.id}
+                    data={CATEGORIES}
+                    renderItem={({ item }) => (
+                        <CategoryItem category={item} goListProductsScreen={goListProductsScreen} />
+                    )}
+                />
+            </View>
+        </SafeAreaView>
     );
 };
 
-
-export default CategoriesScreen;

@@ -7,8 +7,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 import CategoriesScreen from '../components/categories-screen/index';
-import ItemDetailScreen from '../components/item-detail-screen/index';
-import ListItemsScreen from '../components/list-Items-screen/index';
+import ListProductsScreen from '../components/list-products-screen/index';
+import ProductDetailScreen from '../components/product-detail-screen/index';
 
 const AppNavigation = () => {
     return (
@@ -19,17 +19,27 @@ const AppNavigation = () => {
                 <Stack.Screen
                     name="CategoriesScreen"
                     component={CategoriesScreen}
-                    options={{ title: 'CategoriesScreen' }}
+                    options={{ title: 'Categorias' }}
                 />
                 <Stack.Screen
-                    name="ListItemsScreen"
-                    component={ListItemsScreen}
-                    options={{ title: 'ListItemsScreen' }}
+                    name="ListProductsScreen"
+                    component={ListProductsScreen}
+                    options={({ route }) => ({
+                        title: route.params.category.title,
+                        headerStyle: {
+                            backgroundColor: route.params.category.color
+                        },
+                    })}
                 />
                 <Stack.Screen
-                    name="ItemDetailScreen"
-                    component={ItemDetailScreen}
-                    options={{ title: 'ItemDetailScreen' }}
+                    name="ProductDetailScreen"
+                    component={ProductDetailScreen}
+                    options={({ route }) => ({
+                        title: route.params.product.name,
+                        headerStyle: {
+                            backgroundColor: route.params.categoryColor
+                        },
+                    })}
                 />
             </Stack.Navigator>
         </NavigationContainer>
