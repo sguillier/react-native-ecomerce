@@ -9,7 +9,7 @@ import CartScreen from '../components/cart-screen/index.js';
 export default function CartStackNavigation() {
     return (
         <Stack.Navigator
-            initialRouteName='Cart'
+            initialRouteName='CartScreen'
         >
             <Stack.Screen
                 name="CartScreen"

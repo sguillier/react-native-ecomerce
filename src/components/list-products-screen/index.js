@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, Text, FlatList, View} from 'react-native';
 import { styles } from './styles'
 
-import { PRODUCTS } from '../../utils/data/products.js';
+import { PRODUCTS } from '../../utils/data/dataProducts.js';
 import ProductItem from './product-item/index';
 
 export default function ListProductsScreen({ navigation, route }) {

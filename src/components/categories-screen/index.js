@@ -3,7 +3,7 @@ import { SafeAreaView, FlatList, View, } from 'react-native';
 import { styles } from './styles'
 
 import CategoryItem from './category-item/index';
-import { CATEGORIES } from './../../utils/data/categories.js';
+import { CATEGORIES } from '../../utils/data/dataCategories.js';
 
 
 export default function CategoriesScreen({ navigation }) {
