@@ -8,12 +8,19 @@
 
 import React from 'react';
 import AppNavigation from './src/navigation/index';
+import { Provider } from 'react-redux';
+import store from './src/store/index';
 
-const App = () => {
+// import { Text, View, } from 'react-native';
+
+export default function App() {
   return (
-    <AppNavigation />
-  );
-};
-
-export default App;
+    <Provider store={store}>
+      <AppNavigation />
+    </Provider>
+    // <View>
+    //   <Text>HOLA</Text>
+    // </View>
+  )
+}
 

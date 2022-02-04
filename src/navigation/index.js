@@ -23,6 +23,8 @@ import OrdersStackNavigation from './navOrders.js';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+
+
 const BottomTabs = createBottomTabNavigator();
 
 export default function AppNavigation() {
@@ -32,29 +34,29 @@ export default function AppNavigation() {
                 headerShown: false,
             }}>
                 <BottomTabs.Screen
-                    name='Shop'
+                    name='Tienda'
                     component={ShopStackNavigation}
                     options={{
                         tabBarIcon: ({ focused }) => (
-                            <Ionicons name='home-outline' size={20} />
+                            <Ionicons name='home-outline' size={28} />
                         )
                     }}
                 />
                 <BottomTabs.Screen
-                    name='Cart'
+                    name='Carro'
                     component={CartStackNavigation}
                     options={{
                         tabBarIcon: ({ focused }) => (
-                            <Ionicons name='cart-outline' size={20} />
+                            <Ionicons name='cart-outline' size={28} />
                         )
                     }}
                 />
                 <BottomTabs.Screen
-                    name='Order'
+                    name='Ordenes'
                     component={OrdersStackNavigation}
                     options={{
                         tabBarIcon: ({ focused }) => (
-                            <Ionicons name='list-outline' size={20} />
+                            <Ionicons name='list-outline' size={28} />
                         )
                     }}
                 />
