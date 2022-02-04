@@ -20,6 +20,12 @@ export const styles = StyleSheet.create({
     },
     textTotal: {
         fontSize:17,
+    },
+    textCartEmpty: {
+        fontSize: 22,
+        flex: 1,
+        marginTop: 50,
+        textAlign: 'center',
     }
 });
 

@@ -7,12 +7,14 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 
 import CategoriesReducer from "./reducers/categories-reducer";
 import ProductsReducer from "./reducers/products-reducer";
+import CartReducer from "./reducers/cart-reducer";
+
 
 
 const RootReducer = combineReducers({
     categories: CategoriesReducer,
     products: ProductsReducer,
-    // cart: CartReducer,
+    cart: CartReducer,
     // orders: OrderReducer
 });
 

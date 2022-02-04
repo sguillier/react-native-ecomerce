@@ -6,20 +6,20 @@ const initialState = {
 }
 
 const sumTotal = (items) => items
-    .map(item => item.quantity * item.price)
+    .map(item => item.quantity * item.product.price)
     .reduce((a, b) => a + b, 0);
 
 const CartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_ITEM':
             let updateCart = [];
-            if(state.items.find(item => item.id === action.item.id)) {
+            if(state.items.find(item => item.product.id === action.product.id)) {
                 updateCart = state.items.map(item => {
-                    if(item.id === action.item.id) item.quantity++;
+                    if(item.product.id === action.product.id) item.quantity++;
                     return item; 
                 });
             } else {
-                const item = { ...action.item, quantity: 1 };
+                const item = { product: action.product, quantity: 1 };
                 updateCart = [...state.items, item];
             }
             return {
@@ -28,7 +28,7 @@ const CartReducer = (state = initialState, action) => {
                 total: sumTotal(updateCart)
             }
         case 'REMOVE_ITEM':
-            const filterCart = state.items.filter(item => item.id !== action.itemId);
+            const filterCart = state.items.filter(item => item.product.id !== action.itemId);
             return {
                 ...state,
                 items: filterCart,

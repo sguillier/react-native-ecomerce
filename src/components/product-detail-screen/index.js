@@ -1,12 +1,20 @@
 import React from 'react';
-import { SafeAreaView, Text, View, } from 'react-native';
+import { SafeAreaView, Text, View, Button } from 'react-native';
 import { useSelector } from 'react-redux';
 import { styles } from './styles'
+import { useDispatch } from 'react-redux';
 
-
-export default function ItemDetailScreen ({ navigation, route }) {
+export default function ItemDetailScreen({ navigation, route }) {
+    const dispatch = useDispatch()
     const product = useSelector(state => state.products.selected);
     // const product = route.params.product;
+
+    addProduct = (product) => {
+        dispatch({
+            type: 'ADD_ITEM',
+            product: product,
+        })
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -22,6 +30,9 @@ export default function ItemDetailScreen ({ navigation, route }) {
                 <Text style={styles.textTitle}> Precio:</Text>
                 <Text style={styles.text}>{product.price}</Text>
             </View>
+
+            <Button title="Agregar al carrito" onPress={() => addProduct(product)} />
+
 
         </SafeAreaView>
     );
