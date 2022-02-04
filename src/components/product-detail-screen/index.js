@@ -7,11 +7,10 @@ import { useDispatch } from 'react-redux';
 export default function ItemDetailScreen({ navigation, route }) {
     const dispatch = useDispatch()
     const product = useSelector(state => state.products.selected);
-    // const product = route.params.product;
 
     addProduct = (product) => {
         dispatch({
-            type: 'ADD_ITEM',
+            type: 'ADD_CART_ITEM',
             product: product,
         })
     }
